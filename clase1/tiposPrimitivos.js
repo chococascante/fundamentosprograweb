@@ -1,7 +1,7 @@
 // Tipos primitivos de variables de JS
 
 /*
-  1. String (cadena de caracteres).
+  1. String (cadena de caracteres, texto).
   2. Boolean.
   3. Numeric. (float, int, bigInt).
   4. Undefined.

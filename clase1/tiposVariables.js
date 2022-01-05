@@ -17,6 +17,9 @@ const hola = "Hola mundo!";
   let numero = 2;
 
   console.log(numero); // 2
+
+  numero = 5;
+  console.log(numero);
 }
 
 // console.log(numero); // ERROR
@@ -25,13 +28,13 @@ const hola = "Hola mundo!";
 var foo = "Foo";
 let bar = "Bar";
 
-console.log(foo, bar); // Foo Bar
+// console.log(foo, bar); // Foo Bar
 
 {
   var moo = "Moo";
   let baz = "Bazz";
-  console.log(moo, baz); // Moo Bazz
+  // console.log(moo, baz); // Moo Bazz
 }
 
-console.log(moo); // Moo
-console.log(baz); // Error
+// console.log(moo); // Moo
+// console.log(baz); // Error
