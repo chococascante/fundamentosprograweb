@@ -8,6 +8,8 @@ const sienna = {
   edad: 1,
   pareja: null,
   cachorros: undefined,
+  especie: "perro",
+  raza: "zaguate",
 };
 
 const manzana = {
