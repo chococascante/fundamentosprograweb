@@ -131,10 +131,10 @@ function map(arreglo, funcion) {
 }
 
 function forEach(arreglo, funcion) {
-  const nuevoArreglo = [];
+  const nuevoArreglo = []; // Solo para comparar, no hace nada
   for (elemento of arreglo) {
     const resultadoElemento = funcion(elemento); // SÍ CAMBIAMOS EL ELEMENTO
-    nuevoArreglo.push(resultadoElemento);
+    nuevoArreglo.push(resultadoElemento); // Solo para comparar, no hace nada
   }
   // NO DEVUELVE NADA
 }
