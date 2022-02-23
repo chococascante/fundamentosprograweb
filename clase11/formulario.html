@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+</head>
+
+<body>
+    <main>
+        <h1>Registro de usuario</h1>
+        <form>
+            <div>
+                <label for="input-id">Identificacion</label>
+                <input id="input-id" type="text" placeholder="1-1111-1111">
+            </div>
+
+            <div>
+                <label for="input-nombre">Nombre</label>
+                <input id="input-nombre" type="text" placeholder="John">
+            </div>
+
+            <div>
+                <label for="input-apellidos">Apellidos</label>
+                <input type="text" id="input-apellidos" placeholder="Doe">
+            </div>
+
+            <div>
+                <label for="input-email">Correo electrónico</label>
+                <input type="email" id="input-email">
+            </div>
+
+            <div>
+                <label for="input-contrasena">Contraseña</label>
+                <input type="password" id="input-contrasena">
+            </div>
+
+            <div>
+                <label for="input-fecha">Fecha de nacimiento</label>
+                <input type="date" id="input-fecha">
+            </div>
+
+            <div>
+                <label for="input-genero">Generó</label>
+                <select id="input-genero">
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                    <option value="3">Prefiero no especificar</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="estadoCivil">Estado Civil</label>
+                <div>
+                    <input name="estadoCivil" id="soltero" value="soltero" type="radio">
+                    <label for="soltero">Soltero</label>
+                    <input name="estadoCivil" value="casado" id="casado" type="radio">
+                    <label for="casado">Casado</label>
+                </div>
+            </div>
+
+            <div>
+                <label for="hobbies">Hobbies</label>
+
+                <input type="checkbox" name="Ciclismo" id="Ciclismo">
+                <label for="Ciclismo">Ciclismo</label>
+
+                <input type="checkbox" name="Videojuegos" id="Videojuegos">
+                <label for="Videojuegos">Videojuegos</label>
+            </div>
+
+            <div>
+                <label for="curriculum">Curriculum</label>
+                <input id="curriculum" type="file" accept=".pdf, .zip">
+            </div>
+
+            <div>
+                <p>Hola&#32Mundo!</p>
+                <label for="comentarios">Comentarios</label>
+                <textarea maxlength="200" id="comentarios"></textarea>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
