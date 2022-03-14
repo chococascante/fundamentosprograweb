@@ -6,7 +6,7 @@ function sacarValores(){
     const apellidos = inputApellido.value;
 
     console.log(nombre, apellidos);
-    // console.log(`${nombre} ${apellidos}`);
+    // console.log(`<td>${i},${j}</td>`);
 }
 
 window.onload = function() {
