@@ -1,6 +1,6 @@
 window.onload = async function () {
   const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const datos = await respuesta.json();
+  const publicaciones = await respuesta.json();
 
   const respuestaUsuarios = await fetch(
     "https://jsonplaceholder.typicode.com/users"
@@ -11,8 +11,8 @@ window.onload = async function () {
     "https://jsonplaceholder.typicode.com/comments"
   );
   const datosComentarios = await respuestaComentarios.json();
-
-  datos.forEach(function (publicacion) {
+  // [{},{},{}]
+  publicaciones.forEach(function (publicacion) {
     const comentarios = datosComentarios.filter(function (comentario) {
       return publicacion.id === comentario.postId;
     });
@@ -21,27 +21,26 @@ window.onload = async function () {
       return publicacion.userId === usuario.id;
     });
 
-    crearPublicacion(publicacion, usuario, comentarios);
+    crearHTML(publicacion, usuario, comentarios);
   });
 };
 
-function crearPublicacion(publicacion = {}, usuario = {}, comentarios = []) {
+function crearHTML(publicacion = {}, usuario = {}, comentarios = []) {
   const contenedor = document.querySelector("#contenedor");
 
   const publicacionNueva = document.createElement("li");
 
-  const titulo = document.createElement("h3");
-  titulo.innerHTML = formatearTitulo(publicacion.title);
+  const titulo = document.createElement("h3"); // Creo
+  titulo.innerHTML = formatearTitulo(publicacion.title); // Agrego
+  publicacionNueva.appendChild(titulo); // Meto
 
   const autorPublicacion = document.createElement("a");
   autorPublicacion.innerHTML = usuario.name;
   autorPublicacion.href = "./perfil.html?id=" + usuario.id;
+  publicacionNueva.appendChild(autorPublicacion);
 
   const cuerpo = document.createElement("p");
   cuerpo.innerHTML = publicacion.body;
-
-  publicacionNueva.appendChild(titulo);
-  publicacionNueva.appendChild(autorPublicacion);
   publicacionNueva.appendChild(cuerpo);
 
   const listaComentarios = document.createElement("ol");
@@ -73,4 +72,10 @@ function formatearTitulo(titulo = "") {
 
 function irAlPerfil() {
   window.location.href = "perfil.html";
+}
+
+function crearHTMLImg(url) {
+  const img = document.createElement("img");
+  img.src = url;
+  bla.appendChild(img);
 }
