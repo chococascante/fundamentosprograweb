@@ -8,7 +8,7 @@ window.onload = async function () {
   const usuarios = await respuestaUsuarios.json();
 
   const respuestaComentarios = await fetch(
-    "https://jsonplaceholder.typicode.com/albums"
+    "https://jsonplaceholder.typicode.com/comments"
   );
   const datosComentarios = await respuestaComentarios.json();
 
@@ -33,8 +33,9 @@ function crearPublicacion(publicacion = {}, usuario = {}, comentarios = []) {
   const titulo = document.createElement("h3");
   titulo.innerHTML = formatearTitulo(publicacion.title);
 
-  const autorPublicacion = document.createElement("caption");
-  autorPublicacion.innerHTML = usuario.email;
+  const autorPublicacion = document.createElement("a");
+  autorPublicacion.innerHTML = usuario.name;
+  autorPublicacion.href = "./perfil.html?id=" + usuario.id;
 
   const cuerpo = document.createElement("p");
   cuerpo.innerHTML = publicacion.body;
@@ -52,7 +53,7 @@ function crearPublicacion(publicacion = {}, usuario = {}, comentarios = []) {
     nombre.innerHTML = formatearTitulo(comentario.name);
     elemento.appendChild(nombre);
 
-    const autor = document.createElement("h5");
+    const autor = document.createElement("p");
     autor.innerHTML = comentario.email;
     elemento.appendChild(autor);
 
@@ -68,4 +69,8 @@ function crearPublicacion(publicacion = {}, usuario = {}, comentarios = []) {
 
 function formatearTitulo(titulo = "") {
   return `${titulo[0].toUpperCase()}${titulo.slice(1)}`;
+}
+
+function irAlPerfil() {
+  window.location.href = "perfil.html";
 }
